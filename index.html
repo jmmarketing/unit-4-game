@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,47 @@
     <!-- <link rel="stylesheet" href="assets/css/reset.css">-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <h1> Test</h1>
-    
+
+    <!-- Page Header-->
+    <header>
+        <h1>The Crystal Game</h1>
+    </header>
+
+    <!-- Directions-->
+    <div>
+        <p>The Goal of the Crystal Game is to exactly match the score displayed on the screen.</p>
+        <span>Each crsytal is randomly assigned a value. Click the Crystals until you reach the target score. <br>
+            If you go over the target score, you lose. A new target score will be displayed. </p></span>
+    </div>
+
+    <!-- Wins & Losses-->
+
+    <div>
+        <p>Wins: <span id="userWins">0</span></p>
+        <p>Losses: <span id="userLosses">0</span></p>
+    </div>
+
+    <!-- Target Score & User Score-->
+
+    <div>
+        <p>Target: <span id="targetScore">0</span></p>
+        <p>User: <span id="userScore">0</span></p>
+    </div>
+
+    <!-- Crystals-->
+    <div>
+        <img src="assets/images/blue_crystal.png">
+        <img src="assets/images/red_crystal.png">
+        <img src="assets/images/grey_crystal.png">
+        <img src="assets/images/purple_crystal.png">
+    </div>
+
+
+    <!-- Javascript Tags-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="unit-4-game/assets/javascript/game.js"></script>
 </body>
+
 </html>
