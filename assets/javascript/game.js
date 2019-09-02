@@ -6,47 +6,73 @@ $(document).ready(function() {
   
     
         
-        // List of Global Variables
+// List of Global Variables
 
-        var computerScore;
         var targetScore;
+        var playerScore = 0;
         var crystalOne = [0,1,2,3,4,5,6,7,8,9,10,11,12];
         var crystalTwo = [0,1,2,3,4,5,6,7,8,9,10,11,12];
         var crystalThree = [0,1,2,3,4,5,6,7,8,9,10,11,12];
         var crystalFour = [0,1,2,3,4,5,6,7,8,9,10,11,12];
         
 
-    //  Function that randomly assign number to computerScore Variable (19-120). 
+//  Function that randomly assign number to computerScore Variable (19-120). 
         function genCompScore (){
-            computerScore = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+            targetScore = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
             //Takes computerScore and shows on DOM
-            $("#targetScore").text(computerScore);
+            $("#targetScore").text(targetScore);
         }
 
 
-function assignAllCrystals (){
-    // Function that Randomly Assigns number to Crystal 1
+
+//  Function that randomly assign number to each crystal (0-12). 
+    function assignAllCrystals (){
+
+        // Function that Randomly Assigns number to Crystal 1
             crystalOne = Math.floor(Math.random() * crystalOne.length);
 
-    // Function that Randomly Assigns number to Crystal 2
+        // Function that Randomly Assigns number to Crystal 2
             crystalTwo = Math.floor(Math.random() * crystalTwo.length);
 
-    // Function that Randomly Assigns number to Crystal 3
+        // Function that Randomly Assigns number to Crystal 3
             crystalThree = Math.floor(Math.random() * crystalThree.length);
 
-    // Function that Randomly Assigns number to Crystal 4
+        // Function that Randomly Assigns number to Crystal 4
             crystalFour = Math.floor(Math.random() * crystalFour.length);
     }
         
         genCompScore();
         assignAllCrystals();
         console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour);
-        console.log(computerScore);
+        console.log(targetScore);
 
-//     -Addtionally Four(4) Random Numbers are Generated (0 - 12) for the user 
-//         - Each generated number is assigned to separate variables (4)
-//         - Each variable is then assigned to a Crystal Image on the page. 
+
+// On Click jQuery to trigger User Score. Will add the value of Crystal. 
+
+            // Adds Value of Crystal 1 on Click
+            $("#img-crystal-one").on("click", function(){
+                playerScore += crystalOne;
+                $("#userScore").text(playerScore);
+            })
+            // Adds Value of Crystal 2 on Click
+            $("#img-crystal-two").on("click", function(){
+                playerScore += crystalTwo;
+                $("#userScore").text(playerScore);
+            })
+
+            // Adds Value of Crystal 3 on Click
+            $("#img-crystal-three").on("click", function(){
+                playerScore += crystalThree;
+                $("#userScore").text(playerScore);
+            })
+
+            // Adds Value of Crystal 4 on Click
+            $("#img-crystal-four").on("click", function(){
+                playerScore += crystalFour;
+                $("#userScore").text(playerScore);
+            })
+
 
 // Game Logic
 //     - When a crystal image is clicked
