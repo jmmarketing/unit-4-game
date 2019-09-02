@@ -1,10 +1,42 @@
-/* Psuedo Code -- */
-
-//App/Page Loads 
-$(document).ready(function() {
- 
-  
+/* Psuedo Code -- 
+App/Page Loads 
+    -A Random number is Generated for the computer (19 - 120)
+        - That number is assigned to a Variable
+        - That number is show on the page
+    -Addtionally Four(4) Random Numbers are Generated (0 - 12) for the user 
+        - Each generated number is assigned to separate variables (4)
+        - Each variable is then assigned to a Crystal Image on the page. 
+Game Logic
+    - When a crystal image is clicked
+        - The assigned value of that crystal is added to a Total Variable. 
+        - The Total Variable is also shown on the page.
+            - It will change as more crystals are clickd. 
     
+    IF the Total Variable === Computer Number:
+        - It is considered a win. 
+        - The Wins displayed on the page will Increase by 1
+        - The game resets
+            - A New Random number is generated for the Computer
+            - 4 New Random numbers are asssigned to the Crystals
+            - The Total Variable is set back to 0
+    IF the Total Variable !=== Computer Number AND (&&) Total Variable < Computer Number:
+        - The Total Variable keeps adding the Crystal Value from the User Click
+    
+    IF Total Variable > Computer Number:
+        - It is Considered a Loss
+        - The Losses displayed on the page will Increase by 1
+        - The game Resets
+            - A New Random number is generated for the Computer
+            - 4 New Random numbers are asssigned to the Crystals
+            - The Total Variable is set back to 0 
+*/
+
+
+//--------------------------- WAITS UNTIL PAGE LOADS TO START --------------- 
+$(document).ready(function() {
+
+  
+// --------------------- START GLOBAL VARIABLES & FUNCTIONS -----------------
         
 // List of Global Variables
 
@@ -18,7 +50,7 @@ $(document).ready(function() {
         var loss = 0;
         
 
-//  Function that randomly assign number to computerScore Variable (19-120). 
+// Function that randomly assign number to computerScore Variable (19-120). 
         function genCompScore (){
             targetScore = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
@@ -28,7 +60,7 @@ $(document).ready(function() {
 
 
 
-//  Function that randomly assign number to each crystal (0-12). 
+// Function that randomly assign number to each crystal (0-12). 
     function assignAllCrystals (){
 
         // Function that Randomly Assigns number to Crystal 1
@@ -71,16 +103,19 @@ $(document).ready(function() {
              gameReset();
             };
     }
-        
+// ------------------------- END Global Variables & Functions ----------------------------------------    
 
-// Calls functions start first game. 
+// ON PAGE LOAD THESE TWO FUNCTION CALLS START THE GAME
         genCompScore();
         assignAllCrystals();
         console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour);
         console.log(targetScore);
 
+// -------------------------------------------------------------------------------------------------
 
-// On Click jQuery to trigger User Score & Game Logic. Will add the value of Crystal. 
+// -------------------------------- START ON CLICK ACTIONS ---------------------------------------- 
+
+//jQuery to trigger User Score & Game Logic. Will add the value of Crystal. 
 
             // Adds Value of Crystal 1 on Click
             $("#img-crystal-one").on("click", function(){
@@ -109,32 +144,6 @@ $(document).ready(function() {
                 gameLogic();
             })
 
+// ---------------------------------- END ON CLICK ACTIONS -----------------------------------------
 
-// Game Logic
-    
-            if (playerScore === targetScore){
-                wins++;
-                gameReset();
-            }
-
-
-//     IF the Total Variable === Computer Number:
-//         - It is considered a win. 
-//         - The Wins displayed on the page will Increase by 1
-//         - The game resets
-//             - A New Random number is generated for the Computer
-//             - 4 New Random numbers are asssigned to the Crystals
-//             - The Total Variable is set back to 0
-
-//     IF the Total Variable !=== Computer Number AND (&&) Total Variable < Computer Number:
-//         - The Total Variable keeps adding the Crystal Value from the User Click
-    
-//     IF Total Variable > Computer Number:
-//         - It is Considered a Loss
-//         - The Losses displayed on the page will Increase by 1
-//         - The game Resets
-//             - A New Random number is generated for the Computer
-//             - 4 New Random numbers are asssigned to the Crystals
-//             - The Total Variable is set back to 0
-
-});
+}); // <------------ ENDS ALL JAVASCRIPT ----------------------
