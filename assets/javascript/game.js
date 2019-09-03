@@ -95,12 +95,20 @@ $(document).ready(function() {
             wins++;
             $("#userWins").text(wins);
             gameReset();
+            $("#resultMessage").append("<div id='winMessage' style='clear:both;background:white;text-align:center;padding: 10px 20px;border-radius:10px;margin: 10px 0;color:green;'>Winner! New Target Score</span>");
+                setTimeout (function () {
+                    $("#winMessage").remove();
+                }, 4000);
              }
              
              if (playerScore > targetScore){
              loss++;
              $("#userLosses").text(loss);
              gameReset();
+             $("#resultMessage").append("<div id='lossMessage' style='clear:both;background:white;text-align:center;padding: 10px 20px;border-radius:10px;margin: 10px 0;color:red;'>Loser! Try Again</span>");
+                setTimeout (function () {
+                    $("#lossMessage").remove();
+                }, 4000);
             };
     }
 // ------------------------- END Global Variables & Functions ----------------------------------------    
