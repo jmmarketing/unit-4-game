@@ -22,9 +22,10 @@
         <!-- Directions-->
         <div id="directions">
             <h2>The Goal:</h2>
-            <p>Match the target score displayed below, exactly</p>
+            <p>Match the target score displayed below, exactly.</p>
             <h2>How To Play:</h2>
-            <span id="htplay">Each crystal is randomly assigned a value. <br>Click the Crystals until you reach the
+            <span id="htplay">Each crystal is randomly assigned a value (0-12). <br>Click the Crystals until you reach
+                the
                 target score. <br>
                 If you go over the target score, you lose and a new target score will be displayed. </p></span>
         </div>
@@ -45,17 +46,21 @@
             <p><strong>Target:</strong> <span id="targetScore"></span></p>
             <p>User: <span id="userScore"></span></p>
         </div>
-    
-    <!-- Crystals-->
-    <div class="crystals">
-        <h3>Your Crystals:</h3>
-        <img id="img-crystal-one" src="assets/images/blue_crystal.png">
-        <img id="img-crystal-two" src="assets/images/red_crystal.png">
-        <img id="img-crystal-three" src="assets/images/grey_crystal.png">
-        <img id="img-crystal-four" src="assets/images/purple_crystal.png">
-    </div>
 
-</div>
+        <!-- Result Message (Win/Loss)-->
+        <div id="resultMessage"></div>
+
+
+        <!-- Crystals-->
+        <div class="crystals">
+            <h3>Your Crystals:</h3>
+            <img id="img-crystal-one" src="assets/images/blue_crystal.png">
+            <img id="img-crystal-two" src="assets/images/red_crystal.png">
+            <img id="img-crystal-three" src="assets/images/grey_crystal.png">
+            <img id="img-crystal-four" src="assets/images/purple_crystal.png">
+        </div>
+
+    </div>
     <!-- Javascript Tags-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
