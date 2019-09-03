@@ -86,7 +86,7 @@ $(document).ready(function() {
         $("#userScore").text(0);
         genCompScore();
         assignAllCrystals();
-        console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour);
+        console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour); // <- Left in to check/test
     }
 
 // Game Logic Function 
@@ -108,8 +108,8 @@ $(document).ready(function() {
 // ON PAGE LOAD THESE TWO FUNCTION CALLS START THE GAME
         genCompScore();
         assignAllCrystals();
-        console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour);
-        console.log(targetScore);
+        console.log(crystalOne + " " + crystalTwo + " "  + crystalThree + " " + crystalFour); // <- Left in to check/test
+        console.log(targetScore); // <- Left in to check/test
 
 // -------------------------------------------------------------------------------------------------
 
