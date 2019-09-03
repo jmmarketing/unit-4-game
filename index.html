@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="assets/css/reset.css">-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -13,40 +14,48 @@
 <body>
 
     <!-- Page Header-->
-    <header>
-        <h1>The Crystal Game</h1>
-    </header>
+    <div class="main-content">
+        <header>
+            <h1>The Crystal Game</h1>
+        </header>
 
-    <!-- Directions-->
-    <div>
-        <p>The Goal of the Crystal Game is to exactly match the score displayed on the screen.</p>
-        <span>Each crsytal is randomly assigned a value. Click the Crystals until you reach the target score. <br>
-            If you go over the target score, you lose. A new target score will be displayed. </p></span>
+        <!-- Directions-->
+        <div id="directions">
+            <h2>The Goal:</h2>
+            <p>Match the target score displayed below, exactly</p>
+            <h2>How To Play:</h2>
+            <span id="htplay">Each crystal is randomly assigned a value. <br>Click the Crystals until you reach the
+                target score. <br>
+                If you go over the target score, you lose and a new target score will be displayed. </p></span>
+        </div>
     </div>
 
     <!-- Wins & Losses-->
+    <div class="secondary-content">
+        <div class="results">
+            <h3>Wins/Losses:</h3>
+            <p>Wins: <span id="userWins">0</span></p>
+            <p>Losses: <span id="userLosses">0</span></p>
+        </div>
 
-    <div>
-        <p>Wins: <span id="userWins">0</span></p>
-        <p>Losses: <span id="userLosses">0</span></p>
-    </div>
+        <!-- Target Score & User Score-->
 
-    <!-- Target Score & User Score-->
-
-    <div>
-        <p>Target: <span id="targetScore"></span></p>
-        <p>User: <span id="userScore"></span></p>
-    </div>
-
+        <div class="scores">
+            <h3>Scores:</h3>
+            <p><strong>Target:</strong> <span id="targetScore"></span></p>
+            <p>User: <span id="userScore"></span></p>
+        </div>
+    
     <!-- Crystals-->
-    <div>
+    <div class="crystals">
+        <h3>Your Crystals:</h3>
         <img id="img-crystal-one" src="assets/images/blue_crystal.png">
         <img id="img-crystal-two" src="assets/images/red_crystal.png">
         <img id="img-crystal-three" src="assets/images/grey_crystal.png">
         <img id="img-crystal-four" src="assets/images/purple_crystal.png">
     </div>
 
-
+</div>
     <!-- Javascript Tags-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
