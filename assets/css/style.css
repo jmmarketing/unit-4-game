@@ -1,0 +1,69 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    background: url("../images/background.jpg");
+    background-size: cover;
+}
+
+.main-content, .secondary-content{
+    max-width:960px;
+    margin: 0 auto;
+}
+header{
+    background: white;
+    text-align:  center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#directions{
+    background: white;
+    text-align:  center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+#htplay{
+    line-height:1.6;
+}
+
+.results, .scores{
+    background: white;
+    text-align:  center;
+    padding: 20px;
+    margin-top:5px;
+    margin-bottom:10px;
+    border-radius: 10px;
+    width:49.4%;
+    box-sizing: border-box;
+    float:left;
+}
+
+.results{
+    margin-right:5px;
+}
+
+.scores{
+    margin-left:5px;
+}
+.crystals{
+    clear:both;
+    background: white;
+    text-align:  center;
+    padding: 20px;
+    max-width:960px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+img{
+    max-width: 240px;
+    width:23%;
+    height:auto;
+    cursor:pointer;
+    opacity:.8;
+}
+
+img:hover{
+opacity:1;
+}
